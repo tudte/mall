@@ -1,0 +1,1 @@
+webpackJsonp([15],{10:function(t,n,c){"use strict";c(11)},11:function(t,n){},70:function(t,n,c){t.exports=c(71)},71:function(t,n,c){"use strict";c(72),c(10);var s=c(0);$(function(){var t=s.getUrlParam("type")||"default";$("."+t+"-success").show()})},72:function(t,n){}},[70]);
