@@ -32,10 +32,10 @@ public class SkipController {
     public String toRegister(){
         return "user-register";
     }
+
     @RequestMapping("/index")
     public String index(){
         return "index";
-
     }
     @RequestMapping("/forgotPassword")
     public String forgotPassword(){

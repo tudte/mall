@@ -39,14 +39,14 @@
                 </div>
                 <a class="btn btn-submit" onclick="doLogin()" id="submit">登录</a>
                 <div class="link-item">
-                    <a class="link" href="forgotPassword" target="_blank">忘记密码</a>
-                    <a class="link" href="./user-register.html" target="_blank">免费注册</a>
+                    <a class="link" href="forgotPassword">忘记密码</a>
+                    <a class="link" href="./user-register.html">免费注册</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class=footer> <div class=w> <div class=links> <a class=link href=http://www.imooc.com target=_blank>慕课网</a> | <a class=link href=https://www.baidu.com target=_blank>百度</a> | <a class=link href=https://www.taobao.com target=_blank>淘宝</a> | <a class=link href=https://www.zhihu.com target=_blank>知乎</a> </div> <p class=copyright> Copyright © 2019 starkchen.top All Right Reserved 闽ICP备19025887号-1 </p> </div> </div> <script src=http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js></script>
+<div class=footer> <div class=w> <div class=links> <a class=link href=http://www.imooc.com target=_blank>慕课网</a> | <a class=link href=https://www.baidu.com target=_blank>百度</a> | <a class=link href=https://www.taobao.com target=_blank>淘宝</a> | <a class=link href=https://www.zhihu.com target=_blank>知乎</a> </div> <p class=copyright> Copyright © 2019 starkchen.top All Right Reserved 闽ICP备19025887号-1 </p> </div> </div>
 <!--    <script type="text/javascript" src="http://s.starkchen.top/mmall_fe/dist/js/base.js?c46219e408038ce40af1"></script><script type="text/javascript" src="http://s.starkchen.top/mmall_fe/dist/js/user-login.js?c46219e408038ce40af1"></script>-->
 <script src="jquery/jquery-3.3.1.min.js"></script>
 <script src="layui/layui.all.js"></script>

@@ -67,13 +67,41 @@ public class UserController {
     }
 
     /**
+     * 获取当前用户的信息
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "getInfo.do" ,method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<User> getInfo(HttpSession session){
+        User user = (User) session.getAttribute(Conts.CURRENT_USER);
+        if(user!=null){
+            return ServerResponse.createBySuccess(user);
+        }
+        return ServerResponse.createByErrorMessage("用户未登录");
+    }
+
+    /**
      * 通过用户名查询找回密码问题
      * @return
      */
-    @RequestMapping(value = "selectQuestion.do" ,method = RequestMethod.GET)
+    @RequestMapping(value = "forgetQuestion.do" ,method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse selectQuestion(String username){
+    public ServerResponse forgetQuestion(String username){
         return iUserService.selectQuestion(username);
+    }
+
+    /**
+     * 校验回答是否正确
+     * @param username
+     * @param password
+     * @param answer
+     * @return
+     */
+    @RequestMapping(value = "checkAnswer.do" ,method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse checkAnswer(String username,String question,String answer){
+        return iUserService.checkAnswer(username, question, answer);
     }
 
 }

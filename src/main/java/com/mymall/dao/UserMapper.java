@@ -77,4 +77,14 @@ public interface UserMapper {
      * @return
      */
     String selectQuestion(String username);
+
+    /**
+     * 查询用户是否输入正确
+     * @param username
+     * @param password
+     * @param answer
+     * @return
+     */
+    int checkAnswer(@Param("username")String username,@Param("question")String question,@Param("answer")String answer);
+
 }
