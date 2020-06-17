@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset=utf-8> <meta http-equiv=x-ua-compatible content="ie=edge"> <meta name=keywords content=happymmall,电商> <meta name=description content=happymmall电商平台开发教程>
-    <title>用户登录 - happymmall电商平台</title>
+    <title>用户登录 - mymall电商平台</title>
     <link href="http://s.starkchen.top/mmall_fe/dist/css/common.css?c46219e408038ce40af1" rel="stylesheet"><link href="http://s.starkchen.top/mmall_fe/dist/css/user-login.css?c46219e408038ce40af1" rel="stylesheet">
     <link rel="stylesheet" href="layui/css/layui.css">
 </head>

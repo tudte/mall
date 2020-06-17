@@ -51,7 +51,7 @@
                         </label>
                         <input type="password" class="user-content" id="password" placeholder="请输入新密码" autocomplete="off">
                     </div>
-                    <a class="btn btn-submit" id="submit-password">下一步</a>
+                    <a class="btn btn-submit" id="submit-password" onclick="submit_password()">下一步</a>
                 </div>
 
                 <div class="link-item">
@@ -96,6 +96,7 @@
             }
         });
     }
+    let forgetToken=null;
     function submit_question() {
         let username = $("#username").val();
         let question = $(".question").html();
@@ -120,6 +121,36 @@
                     $(".step-username").css("display","none");
                     $(".step-question").css("display","none");
                     $(".step-password").css("display","inline");
+                    forgetToken=data.data;
+                } else {
+                    layer.msg(data.msg, {time:2000, icon:5, shift:6}, function(){
+                    });
+                }
+            }
+        });
+    }
+
+    function submit_password() {
+        let username = $("#username").val();
+        let password = $("#password").val();
+        let ii=null;
+        $.ajax({
+            type:"POST",
+            url:"user/forgetResetPassword.do" ,
+            data:{
+                "username":username,
+                "password":password,
+                "forgetToken":forgetToken
+            },
+            beforeSend:function(){
+                ii = layer.load();
+            },
+            success:function (data) {
+                setTimeout(function(){
+                    layer.close(ii);
+                }, 1000);
+                if (data.status==0) {
+                    window.location.href = "toLogin";
                 } else {
                     layer.msg(data.msg, {time:2000, icon:5, shift:6}, function(){
                     });

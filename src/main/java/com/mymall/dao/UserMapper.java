@@ -81,10 +81,33 @@ public interface UserMapper {
     /**
      * 查询用户是否输入正确
      * @param username
-     * @param password
+     * @param question
      * @param answer
      * @return
      */
     int checkAnswer(@Param("username")String username,@Param("question")String question,@Param("answer")String answer);
 
+    /**
+     * 忘记密码的修改密码
+     * @param username
+     * @param password
+     * @return
+     */
+    int updateByUsername(@Param("username")String username,@Param("password")String password);
+
+    /**
+     * 检查用户密码
+     * @param password
+     * @param id
+     * @return
+     */
+    int checkPassword(@Param("password")String password,@Param("id")Integer id);
+
+    /**
+     * 检查邮箱是否被注册
+     * @param email
+     * @param id
+     * @return
+     */
+    int checkEmailByUserId(@Param("email")String email,@Param("id")Integer id);
 }

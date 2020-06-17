@@ -1,11 +1,12 @@
 package com.mymall.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author lxy
  */
-public class User {
+public class User implements Serializable {
     private Integer id;
 
     private String username;
