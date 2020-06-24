@@ -17,7 +17,7 @@ import java.util.UUID;
  * @author LoveYou
  */
 @Service("iUserService")
-public class IUserServiceImpl implements IUserService {
+public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
 
