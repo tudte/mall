@@ -1,6 +1,6 @@
 package com.mymall.service.impl;
 
-import com.mymall.commons.Conts;
+import com.mymall.commons.Const;
 import com.mymall.commons.ServerResponse;
 import com.mymall.commons.TokenCache;
 import com.mymall.dao.UserMapper;
@@ -56,16 +56,16 @@ public class UserServiceImpl implements IUserService {
     @Override
     public ServerResponse<String> register(User user) {
         //检查用户名是否存在
-        ServerResponse<String> resultName = checkValid(user.getUsername(), Conts.USERNAME);
+        ServerResponse<String> resultName = checkValid(user.getUsername(), Const.USERNAME);
         if(!resultName.isSuccess()){
             return resultName;
         }
         //检查邮箱是否已被注册
-        ServerResponse<String> resultEmail = checkValid(user.getEmail(), Conts.EMAIL);
+        ServerResponse<String> resultEmail = checkValid(user.getEmail(), Const.EMAIL);
        if(!resultEmail.isSuccess()){
            return resultEmail;
        }
-        user.setRole(Conts.Role.ROLE_CUSTOMER);
+        user.setRole(Const.Role.ROLE_CUSTOMER);
         //MD5加密
         user.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
         //存入用户数据
@@ -88,7 +88,7 @@ public class UserServiceImpl implements IUserService {
         //判断是否位空字符
         if(StringUtils.isNotBlank(type)){
             //校验用户名
-            if(Conts.USERNAME.equals(type)){
+            if(Const.USERNAME.equals(type)){
                 int resultName = userMapper.checkUsername(str);
                 //返回错误信息
                 if(resultName>0){
@@ -96,7 +96,7 @@ public class UserServiceImpl implements IUserService {
                 }
             }
             //校验邮箱
-            if(Conts.EMAIL.equals(type)){
+            if(Const.EMAIL.equals(type)){
                 int resultEmail = userMapper.checkEmail(str);
                 //返回错误信息
                 if(resultEmail>0){
@@ -118,7 +118,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public ServerResponse selectQuestion(String username) {
         //校验用户名是否存在
-        ServerResponse<String> checkValid = checkValid(username, Conts.USERNAME);
+        ServerResponse<String> checkValid = checkValid(username, Const.USERNAME);
         //用户信息不存在则返回信息
         if(checkValid.isSuccess()){
             return ServerResponse.createByErrorMessage("用户名输入有误");
@@ -165,7 +165,7 @@ public class UserServiceImpl implements IUserService {
         if(StringUtils.isBlank(forgetToken)){
             return ServerResponse.createByErrorMessage("需要传递token");
         }
-        ServerResponse<String> resultName = checkValid(username, Conts.USERNAME);
+        ServerResponse<String> resultName = checkValid(username, Const.USERNAME);
         //用户不存在
         if(resultName.isSuccess()){
             return ServerResponse.createByErrorMessage("用户不存在");
@@ -262,7 +262,7 @@ public class UserServiceImpl implements IUserService {
      */
     @Override
     public ServerResponse checkAdminRole(User user) {
-        if(user != null && user.getRole().intValue() == Conts.Role.ROLE_ADMIN){
+        if(user != null && user.getRole().intValue() == Const.Role.ROLE_ADMIN){
             return ServerResponse.createBySuccess();
         }
         return ServerResponse.createByError();
