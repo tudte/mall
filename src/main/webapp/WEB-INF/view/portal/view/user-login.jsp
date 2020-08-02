@@ -12,7 +12,7 @@
     <meta charset=utf-8> <meta http-equiv=x-ua-compatible content="ie=edge"> <meta name=keywords content=happymmall,电商> <meta name=description content=happymmall电商平台开发教程>
     <title>用户登录 - MYMALL电商平台</title>
     <link href="http://s.starkchen.top/mmall_fe/dist/css/common.css?c46219e408038ce40af1" rel="stylesheet"><link href="http://s.starkchen.top/mmall_fe/dist/css/user-login.css?c46219e408038ce40af1" rel="stylesheet">
-    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/layui/css/layui.css">
 </head>
 <body>
 <div class=nav-simple> <div class=w> <a class=logo href=./index.html>MYMALL</a> </div> </div>
@@ -48,8 +48,8 @@
 </div>
 <div class=footer> <div class=w> <div class=links> <a class=link href=http://www.imooc.com target=_blank>慕课网</a> | <a class=link href=https://www.baidu.com target=_blank>百度</a> | <a class=link href=https://www.taobao.com target=_blank>淘宝</a> | <a class=link href=https://www.zhihu.com target=_blank>知乎</a> </div> <p class=copyright> Copyright © 2019 starkchen.top All Right Reserved 闽ICP备19025887号-1 </p> </div> </div>
 <!--    <script type="text/javascript" src="http://s.starkchen.top/mmall_fe/dist/js/base.js?c46219e408038ce40af1"></script><script type="text/javascript" src="http://s.starkchen.top/mmall_fe/dist/js/user-login.js?c46219e408038ce40af1"></script>-->
-<script src="jquery/jquery-3.3.1.min.js"></script>
-<script src="layui/layui.all.js"></script>
+<script src="${pageContext.request.contextPath}/resources/jquery/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/layui/layui.all.js"></script>
 <script>
     function doLogin() {
             let username = $("#username").val();

@@ -5,7 +5,7 @@
   Time: 11:00
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,9 +62,9 @@
     </div>
 </div>
 <div class=footer> <div class=w> <div class=links> <a class=link href=http://www.imooc.com target=_blank>慕课网</a> | <a class=link href=https://www.baidu.com target=_blank>百度</a> | <a class=link href=https://www.taobao.com target=_blank>淘宝</a> | <a class=link href=https://www.zhihu.com target=_blank>知乎</a> </div> <p class=copyright> Copyright © 2019 starkchen.top All Right Reserved 闽ICP备19025887号-1 </p> </div> </div> <script src=http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js></script>
-<script src="js/user-pass-resrt01.js"></script>
-<script src="jquery/jquery-3.3.1.min.js"></script>
-<script src="layui/layui.all.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/user-pass-resrt01.js"></script>
+<script src="${pageContext.request.contextPath}/resources/jquery/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/layui/layui.all.js"></script>
 <script>
     $(function () {
         $(".step-username").css("display","inline");

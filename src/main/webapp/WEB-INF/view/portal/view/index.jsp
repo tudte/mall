@@ -248,7 +248,7 @@
         </ul>
     </div>
 </div>
-<script src="jquery/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/jquery/jquery-3.3.1.min.js"></script>
 <script>
     function toLogin() {
         location.href="http://www.baidu.com";

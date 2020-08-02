@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * @author LoveYou
  */
-public class Const {
+public class Conts {
 
     public static final String CURRENT_USER = "currentUser";
 

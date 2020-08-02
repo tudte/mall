@@ -1,6 +1,6 @@
 package com.mymall.controller.portal;
 
-import com.mymall.commons.Const;
+import com.mymall.commons.Conts;
 import com.mymall.commons.ResponseCode;
 import com.mymall.commons.ServerResponse;
 import com.mymall.pojo.User;
@@ -37,7 +37,7 @@ public class UserController {
     public ServerResponse<User> login(String username, String password, HttpSession session){
         ServerResponse<User> response = iUserService.login(username, password);
         if(response.isSuccess()){
-            session.setAttribute(Const.CURRENT_USER,response.getData());
+            session.setAttribute(Conts.CURRENT_USER,response.getData());
         }
         return response;
     }
@@ -50,7 +50,7 @@ public class UserController {
     @RequestMapping(value = "loginOut.do" ,method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse<String> loginOut(HttpSession session){
-        session.removeAttribute(Const.CURRENT_USER);
+        session.removeAttribute(Conts.CURRENT_USER);
         return ServerResponse.createBySuccess();
     }
 
@@ -75,7 +75,7 @@ public class UserController {
     @RequestMapping(value = "getInfo.do" ,method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> getInfo(HttpSession session){
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        User user = (User) session.getAttribute(Conts.CURRENT_USER);
         if(user!=null){
             return ServerResponse.createBySuccess(user);
         }
@@ -128,7 +128,7 @@ public class UserController {
     @RequestMapping(value = "resetPassword.do" ,method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> resetPassword(HttpSession session,String passwordOld,String passwordNew){
-        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        User user = (User)session.getAttribute(Conts.CURRENT_USER);
         if(user==null){
             return ServerResponse.createByErrorMessage("用户未登录");
         }
@@ -145,7 +145,7 @@ public class UserController {
     @ResponseBody
     public ServerResponse<User> updateInformation(HttpSession session,User user){
         //查询是否处于登录状态下
-        User sessionUser = (User) session.getAttribute(Const.CURRENT_USER);
+        User sessionUser = (User) session.getAttribute(Conts.CURRENT_USER);
         if(sessionUser==null){
             return ServerResponse.createByErrorMessage("用户未登录");
         }
@@ -156,7 +156,7 @@ public class UserController {
         if(response.isSuccess()){
             response.getData().setUsername(sessionUser.getUsername());
             //存储到session域对象中
-            session.setAttribute(Const.CURRENT_USER,response.getData());
+            session.setAttribute(Conts.CURRENT_USER,response.getData());
         }
         return response;
     }
@@ -164,7 +164,7 @@ public class UserController {
     @ResponseBody
     public ServerResponse<User> getInformation(HttpSession session){
         //获取session中的信息
-        User currentUser = (User)session.getAttribute(Const.CURRENT_USER);
+        User currentUser = (User)session.getAttribute(Conts.CURRENT_USER);
         if(currentUser == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),"未登录,需要强制登录status=10");
         }

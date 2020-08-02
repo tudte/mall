@@ -22,23 +22,23 @@ public class SkipController {
         for (User user : users) {
             System.out.println(user);
         }
-        return "user-login";
+        return "portal/view/user-login";
     }
     @RequestMapping("/toLogin")
     public String toLogin(){
-        return "user-login";
+        return "portal/view/user-login";
     }
     @RequestMapping("/toRegister")
     public String toRegister(){
-        return "user-register";
+        return "portal/view/user-register";
     }
 
     @RequestMapping("/index")
     public String index(){
-        return "index";
+        return "portal/view/index";
     }
     @RequestMapping("/forgotPassword")
     public String forgotPassword(){
-        return "user-pass-reset";
+        return "portal/view/user-pass-reset";
     }
 }

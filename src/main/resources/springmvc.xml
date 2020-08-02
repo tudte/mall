@@ -38,10 +38,10 @@
          </mvc:interceptor>
      </mvc:interceptors>-->
     <!--静态资源-->
-    <mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
-    <mvc:resources mapping="/css/**" location="/WEB-INF/css/" />
-    <mvc:resources mapping="/layui/**" location="/WEB-INF/layui/" />
-    <mvc:resources mapping="/jquery/**" location="/WEB-INF/jquery/" />
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+   <!-- <mvc:resources mapping="/css/**" location="/resources/css" />
+    <mvc:resources mapping="/layui/**" location="/resources/layui" />
+    <mvc:resources mapping="/jquery/**" location="/resources/jquery" />-->
     <mvc:default-servlet-handler/>
     <!--注解支持-->
     <mvc:annotation-driven/>
